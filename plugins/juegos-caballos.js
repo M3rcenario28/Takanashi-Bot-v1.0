@@ -64,7 +64,7 @@ let handler = async (m, { conn, args }) => {
 };
 
 handler.help = ['carrera <cantidad> <caballo>'];
-handler.tags = ['juegos];
+handler.tags = ['juegos'];
 handler.command = ['carrera', 'race'];
 
 export default handler;

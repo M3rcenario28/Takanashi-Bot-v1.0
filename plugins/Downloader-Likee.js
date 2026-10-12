@@ -8,8 +8,7 @@
 import axios from 'axios';
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-  if (!text) return conn.reply(m.chat, '🚩 Ingresa la URL de Likee que deseas descargar.\n
-`Ejemplo:`\n' + `> *${usedPrefix + command}* https://l.likee.video/v/E4JSK7`, m, rcanal);
+  if (!text) return conn.reply(m.chat, `🚩 Ingresa la URL de Likee que deseas descargar.\n\n\`Ejemplo:\`\n> *${usedPrefix + command}* https://l.likee.video/v/E4JSK7`, m);
 
   await m.react('🕓');
 
@@ -19,11 +18,9 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     if (response.data) {
       const videoData = response.data;
 
-      let txt = '`乂  L I K E E  -  D O W N L O A D`\n
-';
+      let txt = '`乂  L I K E E  -  D O W N L O A D`\n\n';
       txt += `    ✩  *Creador* : ${videoData.creator}\n`;
-      txt += `    ✩  *Caption* : ${videoData.caption}\n
-`;
+      txt += `    ✩  *Caption* : ${videoData.caption}\n\n`;
       txt += `> 🚩 Enlace con marca de agua: ${videoData.links.watermark}\n`;
       txt += `> 🚩 Enlace sin marca de agua: ${videoData.links['no watermark']}`;
 
